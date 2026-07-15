@@ -1,5 +1,5 @@
 import winston from "winston"
-import { MongoDB } from "winston-mongodb";
+// import { MongoDB } from "winston-mongodb";
 import { getCorrelationId } from "../utils/helpers/request.helpers";
 import DailyRotateFile from "winston-daily-rotate-file";
 
@@ -32,31 +32,30 @@ export const logger = winston.createLogger({
 
 
 
-const ConnectDB = async ()=>{
-    logger.info('Connecting to database...');
-    const MongoClient =  require('mongodb').MongoClient;
-    const url = "mongodb+srv://Akash:dShBwFesPRiCbG4i@cluster0.sdjjop1.mongodb.net";
+// const ConnectDB = async ()=>{
+//     logger.info('Connecting to database...');
+//     const MongoClient =  require('mongodb').MongoClient;
+//     const url = process.env.MONGO_URI;
 
-    const client = new MongoClient(url);
-    await client.connect();
-
-
+//     const client = new MongoClient(url);
+//     await client.connect();
 
 
 
-    const transportOptions = {
-        db: await Promise.resolve(client),
-        collection: 'logger'
-    };
 
-    logger.add(new MongoDB(transportOptions));
+
+//     const transportOptions = {
+//         db: await Promise.resolve(client),
+//         collection: 'logger'
+//     };
+
+//     logger.add(new MongoDB(transportOptions));
  
 
-    logger.info('Connected to database.',{url});
-}
+//     logger.info('Connected to database.',{url});
+// }
 
-ConnectDB();
-
+// ConnectDB();
 
 
 // following entry should appear in logger collection and will contain
