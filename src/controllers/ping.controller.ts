@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from 'express';
 // import fs from 'fs/promises';
-import { FileNotFound} from '../utils/errors/app.error';
+import { NotFoundError} from '../utils/errors/app.error';
 import { logger } from '../config/logger.config';
 
 
@@ -14,6 +14,6 @@ export const pingHandler = async (req: Request, res: Response, next: NextFunctio
         });
     } catch (error) {
         // throw new InternalServerError("Interval Server Error");
-        throw new FileNotFound("File Not Found!");
+        throw new NotFoundError("File Not Found!");
     }
 }
