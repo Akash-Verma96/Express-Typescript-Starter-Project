@@ -10,5 +10,7 @@ export const attachCorrelationMiddleware = (req : Request,res: Response, next: N
     asyncLocalStorage.run({ correlationid : correlationId},() => {
         next();
     })
+    // asyncLocalStorage.enterWith({ correlationid : correlationId});
+    // next();
     
 }

@@ -12,6 +12,7 @@ export class InternalServerError implements AppError{
         this.name = "Internal Server Error";
     }
 }
+
 export class FileNotFound implements AppError{
     statusCode: number;
     message: string;

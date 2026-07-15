@@ -11,7 +11,8 @@ const app = express();
 app.use(express.json()); // Middleware to parse JSON request bodies used for serialization and deserialization of data in the request body
 app.use(express.text());
 
-app.use(attachCorrelationMiddleware);
+app.use(attachCorrelationMiddleware); // middleware to attach correlation id to logger AsyncLocalStorage context
+
 app.use("/api/v1", v1Router); // Registering all the routes from pingRouter to the app
 app.use("/api/v2", v2Router); // Registering all the routes from pingRouter to the app
 
