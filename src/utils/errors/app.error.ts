@@ -48,7 +48,7 @@ export class BadRequestError implements AppError {
 }
 
 /**
- * Represents a "Not Found" error.
+ * Represents a "Not Found" error (HTTP 404).
  * Implements the `AppError` interface.
  * This error is typically used to indicate that a requested resource could not be found.
  *
